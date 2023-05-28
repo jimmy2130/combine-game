@@ -171,7 +171,7 @@ const Wrapper = styled.div`
 		padding: 96px 48px 48px 48px;
 	}
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		padding: 56px 24px 24px 24px;
 	}
 `;
@@ -184,7 +184,7 @@ const Game = styled.div`
 		flex-direction: column;
 	}
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		gap: 8px;
 	}
 `;
@@ -206,7 +206,7 @@ const Eyebrow = styled.span`
 	padding: 8px 24px;
 	font-size: calc(24 / 16 * 1rem);
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		font-size: calc(16 / 16 * 1rem);
 	}
 `;
@@ -228,7 +228,7 @@ const InfoWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		padding: 16px;
 	}
 `;
@@ -243,7 +243,7 @@ const Result = styled.div`
 	align-content: flex-start;
 	flex-wrap: wrap;
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		height: 60px;
 		font-size: calc(16 / 16 * 1rem);
 		margin-bottom: 8px;
@@ -254,7 +254,7 @@ const Item = styled.p`
 	padding-left: 16px;
 	padding-right: 16px;
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		padding-left: 8px;
 		padding-right: 16px;
 	}
@@ -266,7 +266,7 @@ const ControlGroup = styled.form`
 	gap: 16px;
 	margin-bottom: 32px;
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		margin-bottom: 16px;
 	}
 `;
@@ -276,7 +276,7 @@ const Input = styled.input`
 	font-size: clamp(16 / 16 * 1rem, 16vw - 144 / 16 * 1rem, 32 / 16 * 1rem);
 	text-align: center;
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		padding: 4px 12px;
 	}
 `;
@@ -306,7 +306,7 @@ const StyledButton = styled(UnstyledButton)`
 		border: 2px solid #e6e6e6;
 	}
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		height: revert;
 		font-size: calc(16 / 16 * 1rem);
 		padding-top: 4px;
@@ -324,7 +324,7 @@ const ScoreBoard = styled.div`
 	font-size: calc(24 / 16 * 1rem);
 	text-align: center;
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		display: flex;
 		justify-content: space-between;
 		margin-left: 8px;
@@ -333,7 +333,7 @@ const ScoreBoard = styled.div`
 `;
 
 const Title = styled.p`
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		font-size: calc(16 / 16 * 1rem);
 	}
 `;
@@ -341,7 +341,7 @@ const Title = styled.p`
 const Score = styled.p`
 	font-size: calc(48 / 16 * 1rem);
 
-	@media ${QUERIES.phoneAndDown} {
+	@media ${QUERIES.tabletAndDown} {
 		font-size: calc(16 / 16 * 1rem);
 		font-weight: bold;
 	}
