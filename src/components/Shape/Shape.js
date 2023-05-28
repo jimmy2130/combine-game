@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import UnstyledButton from '../UnstyledButton';
 
 const SHAPES = [Circle, Square, Triangle];
@@ -11,7 +12,7 @@ function Shape({ id = '021', num, handleAddNum }) {
 	const color = COLORS[id[1]];
 	const backgroundColor = BACKGROUND_COLORS[id[2]];
 	return (
-		<UnstyledButton onClick={event => handleAddNum(event, num)}>
+		<Wrapper onClick={event => handleAddNum(event, num)}>
 			<svg
 				width="200"
 				viewBox="0 0 200 200"
@@ -21,9 +22,14 @@ function Shape({ id = '021', num, handleAddNum }) {
 				<Background fill={backgroundColor} />
 				<Pattern fill={color} />
 			</svg>
-		</UnstyledButton>
+		</Wrapper>
 	);
 }
+
+const Wrapper = styled(UnstyledButton)`
+	border: solid;
+	aspect-ratio: 1 / 1;
+`;
 
 function Background({ fill = 'black' }) {
 	return <rect width="200" height="200" fill={fill} />;

@@ -4,6 +4,7 @@ import { createPuzzle, checkSingleGuess, checkFinish } from '../../helpers';
 import Shape from '../Shape';
 import UnstyledButton from '../UnstyledButton';
 import Icon from '../Icon';
+import { QUERIES } from '../../constants';
 
 const TOTAL_QUESTIONS = 3;
 
@@ -160,11 +161,32 @@ const Wrapper = styled.div`
 	height: 100%;
 	display: grid;
 	place-content: center;
+
+	padding-left: 32px;
+	padding-right: 32px;
+
+	@media ${QUERIES.tabletAndDown} {
+		height: revert;
+		display: revert;
+		padding: 96px 48px 48px 48px;
+	}
+
+	@media ${QUERIES.phoneAndDown} {
+		padding: 56px 24px 24px 24px;
+	}
 `;
 
 const Game = styled.div`
 	display: flex;
 	gap: 32px;
+
+	@media ${QUERIES.tabletAndDown} {
+		flex-direction: column;
+	}
+
+	@media ${QUERIES.phoneAndDown} {
+		gap: 8px;
+	}
 `;
 
 const Board = styled.div`
@@ -172,6 +194,9 @@ const Board = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 8px;
+
+	/* border: solid; */
+	height: fit-content;
 `;
 
 const Eyebrow = styled.span`
@@ -180,6 +205,10 @@ const Eyebrow = styled.span`
 	transform: translateY(-100%);
 	padding: 8px 24px;
 	font-size: calc(24 / 16 * 1rem);
+
+	@media ${QUERIES.phoneAndDown} {
+		font-size: calc(16 / 16 * 1rem);
+	}
 `;
 
 const Tag = styled(Eyebrow)`
@@ -198,6 +227,10 @@ const InfoWrapper = styled.div`
 	border: solid;
 	display: flex;
 	flex-direction: column;
+
+	@media ${QUERIES.phoneAndDown} {
+		padding: 16px;
+	}
 `;
 
 const Result = styled.div`
@@ -209,11 +242,22 @@ const Result = styled.div`
 	flex-direction: column;
 	align-content: flex-start;
 	flex-wrap: wrap;
+
+	@media ${QUERIES.phoneAndDown} {
+		height: 60px;
+		font-size: calc(16 / 16 * 1rem);
+		margin-bottom: 8px;
+	}
 `;
 
 const Item = styled.p`
 	padding-left: 16px;
 	padding-right: 16px;
+
+	@media ${QUERIES.phoneAndDown} {
+		padding-left: 8px;
+		padding-right: 16px;
+	}
 `;
 
 const ControlGroup = styled.form`
@@ -221,12 +265,20 @@ const ControlGroup = styled.form`
 	flex-direction: column;
 	gap: 16px;
 	margin-bottom: 32px;
+
+	@media ${QUERIES.phoneAndDown} {
+		margin-bottom: 16px;
+	}
 `;
 
 const Input = styled.input`
 	padding: 8px 24px;
-	font-size: calc(32 / 16 * 1rem);
-	height: 80px;
+	font-size: clamp(16 / 16 * 1rem, 16vw - 144 / 16 * 1rem, 32 / 16 * 1rem);
+	text-align: center;
+
+	@media ${QUERIES.phoneAndDown} {
+		padding: 4px 12px;
+	}
 `;
 
 const ButtonWrapper = styled.div`
@@ -236,7 +288,6 @@ const ButtonWrapper = styled.div`
 `;
 
 const StyledButton = styled(UnstyledButton)`
-	width: 120px;
 	height: 80px;
 	background: #e6e6e6;
 	border-radius: 4px;
@@ -254,6 +305,13 @@ const StyledButton = styled(UnstyledButton)`
 	&:disabled&:hover {
 		border: 2px solid #e6e6e6;
 	}
+
+	@media ${QUERIES.phoneAndDown} {
+		height: revert;
+		font-size: calc(16 / 16 * 1rem);
+		padding-top: 4px;
+		padding-bottom: 4px;
+	}
 `;
 
 const IconButton = styled(UnstyledButton)`
@@ -265,12 +323,28 @@ const IconButton = styled(UnstyledButton)`
 const ScoreBoard = styled.div`
 	font-size: calc(24 / 16 * 1rem);
 	text-align: center;
+
+	@media ${QUERIES.phoneAndDown} {
+		display: flex;
+		justify-content: space-between;
+		margin-left: 8px;
+		margin-right: 8px;
+	}
 `;
 
-const Title = styled.p``;
+const Title = styled.p`
+	@media ${QUERIES.phoneAndDown} {
+		font-size: calc(16 / 16 * 1rem);
+	}
+`;
 
 const Score = styled.p`
 	font-size: calc(48 / 16 * 1rem);
+
+	@media ${QUERIES.phoneAndDown} {
+		font-size: calc(16 / 16 * 1rem);
+		font-weight: bold;
+	}
 `;
 
 export default App;
