@@ -137,7 +137,10 @@ function App() {
 							>
 								結!
 							</StyledButton>
-							<StyledButton onClick={handleGuess} disabled={finish}>
+							<StyledButton
+								onClick={handleGuess}
+								disabled={guess === '' || finish}
+							>
 								合!
 							</StyledButton>
 						</ButtonWrapper>
