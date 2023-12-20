@@ -25,10 +25,18 @@ function App() {
 	function handleAddNum(event, num) {
 		event.preventDefault();
 		const nextGuess = guess;
-		if (nextGuess.length === 3) {
+		if (nextGuess.includes(num.toString())) {
+			setGuess(
+				nextGuess
+					.split('')
+					.filter(el => el !== num.toString())
+					.join(''),
+			);
+		} else if (nextGuess.length === 3) {
 			return;
+		} else {
+			setGuess(`${nextGuess}${num}`);
 		}
-		setGuess(`${nextGuess}${num}`);
 	}
 
 	const handleGuess = React.useCallback(
